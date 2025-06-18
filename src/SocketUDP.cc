@@ -115,7 +115,8 @@ ssize_t SocketUDP::recv(void *buf, size_t size, uint32_t timeout_ms) {
 
 
 void SocketUDP::get_client_address(const char *&ip_addr, uint16_t &port) {
-    ip_addr = inet_ntoa(in_addr.sin_addr);
+    memcpy(this->client_addr, inet_ntoa(in_addr.sin_addr), 16);
+    ip_addr = this->client_addr;
     port = ntohs(in_addr.sin_port);
 }
 

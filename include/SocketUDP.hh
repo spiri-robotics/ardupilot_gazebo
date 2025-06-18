@@ -76,6 +76,8 @@ private:
     /// \brief Make a sockaddr_in struct from address and port.
     void make_sockaddr(const char *address, uint16_t port,
                        struct sockaddr_in &sockaddr);
+
+    char client_addr[16];
 };
 
 #endif  // SOCKETUDP_HH_
