@@ -1416,7 +1416,7 @@ ssize_t getServoPacket(
     ssize_t recvSize = _sock.recv(&_pkt, sizeof(TServoPacket), _waitMs);
 
     _sock.get_client_address(_fcu_address, _fcu_port_out);
-    gzlog << "UDP Socket Client Address: " << _fcu_address << "\n";
+    // gzlog << "UDP Socket Client Address: " << _fcu_address << "\n";
     // drain the socket in the case we're backed up
     int counter = 0;
     while (true)
